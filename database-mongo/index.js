@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
-
+//mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://moukdad:mnmnmn123456789@ds115244.mlab.com:15244/share');
+//mongodb://moukdad:mnmnmn123456789@ds115244.mlab.com:15244/share
 var db = mongoose.connection;
 
 db.on('error', function() {
