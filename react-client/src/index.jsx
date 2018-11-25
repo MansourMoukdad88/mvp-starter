@@ -1,35 +1,60 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import List from './components/List.jsx';
+//import List from './components/List.jsx';
 
+import UserList from './components/UserList.jsx';
+import AddUser from './components/AddUser.jsx';
+//=======================================
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      items: []
+      users: []
     }
   }
-
-  componentDidMount() {
+add( name, title, text) {
+    if(userName && age && country ){
     $.ajax({
-      url: '/items', 
+      type: 'POST',
+      url: '/users',
+      data : {
+      name : name ,
+      title: title,
+      text: text 
+     },     
       success: (data) => {
-        this.setState({
-          items: data
-        })
+        console.log('Added', data)
       },
       error: (err) => {
         console.log('err', err);
       }
     });
-  }
 
+  }
+  }
+    showData(){
+      $.ajax({
+        type:'GET',
+        url: '/users',
+        success:(data)=>{
+          this.setState({
+            users:data
+          })
+        },
+        error: (err) => {
+        console.log('err', err);
+      }
+      })
+    }
+  
   render () {
     return (
     <div>
-      <h1>Share The Moments</h1>
-      <List items={this.state.items}/>
+      <h1 id ='text'>  Survey</h1>      
+      <UserList users={this.state.users}/>
+      <AddUser  users={this.state.users} onAdd={this.add.bind(this)} onShow={this.showData.bind(this)}/>
+
     </div>
     )
   }

@@ -6,7 +6,8 @@ var bodyParser = require('body-parser');
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}))
-
+/*app.use(bodyParser.json())
+*/
 // UNCOMMENT FOR REACT
  app.use(express.static(__dirname + '/../react-client/dist'));
 
@@ -14,28 +15,25 @@ app.use(bodyParser.urlencoded({extended: true}))
 // app.use(express.static(__dirname + '/../angular-client'));
  app.use(express.static(__dirname + '/../node_modules'));
 //=================================================================
-/*app.get('/', function(req, res) {
+/*app.get('/users', function(req, res) {
 	res.send("home page");
 });
 
 app.get('/moments', function(req, res) {
 	res.send("moments page");
-});*/
-
+});
+*/
 //=================================================================
-app.get('/items', function (req, res) {
-
-  	console.log( "AAAAAAAAA", req.body)
-  
-  items.selectAll(function(err, data) {
+app.get('/users', function (req, res) {
+  users.User.find(function(err, data) {
+    console.log(data)
     if(err) {
       res.sendStatus(500);
     } else {
-      res.json(data);
+      res.send(data);
     }
   });
 });
-
 app.listen(3000, function() {
   console.log('listening on port 3000!');
 });

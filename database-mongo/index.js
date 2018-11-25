@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
-//mongoose.connect('mongodb://moukdad:mnmnmn123456789@ds115244.mlab.com:15244/share');
+//mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://moukdad:mnmnmn123456789@ds115244.mlab.com:15244/share');
 //mongodb://moukdad:mnmnmn123456789@ds115244.mlab.com:15244/share
 var db = mongoose.connection;
 
@@ -12,21 +12,29 @@ db.once('open', function() {
   console.log('mongoose connected successfully');
 });
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+var userSchema = mongoose.Schema({
+  name: String,
+  title: String,
+  text: String
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var User = mongoose.model('User', userSchema);
 
-var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, items);
-    }
-  });
+var save = function(data ,callback) {
+  
+
+  var user = new User(data);
+
+  user.save(function(err){
+    if(err){
+      callback(err,null);
+    }else{ 
+      console.log('database data',data)
+    callback(null,data);
+  }
+  })
 };
 
-module.exports.selectAll = selectAll;
+
+module.exports.User = User;
+module.exports.save = save;

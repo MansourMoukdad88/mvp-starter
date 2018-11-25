@@ -1,0 +1,46 @@
+/*body{
+	background-image: url('https://wallpaperbrowse.com/media/images/technology-or-bio-molecular-structure-with-space-for-text-4k-looped-animation-presentation-background_voflj4vnl__F0000.png');
+	margin: 50px;
+}
+*/
+ #user{
+	font-family: Arial;
+	background-color: #999;
+	border-radius: 20px;
+	padding: 20px;
+	color: white;
+	text-align: center;
+}
+#text{
+	font-family: Arial;
+	
+	border-radius: 20px;
+	padding: 10px;
+	color:blue /*aliceblue*/;
+	text-align: center;
+}
+#txt{
+	font-family: Arial;
+/*	width: 250px;
+	height: 200px;*/
+	border-radius: 20px;
+	padding: 10px;
+	/*color: aliceblue;*/
+	color:blue /*aliceblue*/;
+	text-align: center;
+}
+button{
+	height: 30px;
+	width: 100px;
+	font-family: Arial;
+	background-color: #333;
+	color: white;
+	margin: 20px;
+}
+#btn{
+	text-align: center;
+}
+#any{
+	width: 250px;
+	height: 250px;
+}
