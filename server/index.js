@@ -41,11 +41,11 @@ app.post('/users',function(req,res){
 })
 app.get('/users', function (req, res) {
   users.User.find(function(err, data) {
-    console.log(data)
+    
     if(err) {
       res.sendStatus(500);
     } else {
-  
+      console.log('ssssssssss',data)
       res.send(data);
     }
   });

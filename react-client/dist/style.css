@@ -1,5 +1,5 @@
 body{
-	background-image: url('https://previews.123rf.com/images/vska/vska1507/vska150700266/42710205-abstract-tech-background-futuristic-interface-.jpg');
+	background-image: url('https://groupcdg.com/app/uploads/2016/06/Fortune_agile.jpg');
 	margin: 50px;
 }
 
@@ -16,17 +16,16 @@ body{
 	
 	border-radius: 20px;
 	padding: 10px;
-	color:blue /*aliceblue*/;
+	color:black /*aliceblue*/;
 	text-align: center;
 }
 #txt{
 	font-family: Arial;
-/*	width: 250px;
-	height: 200px;*/
+
 	border-radius: 20px;
 	padding: 10px;
 	/*color: aliceblue;*/
-	color:blue /*aliceblue*/;
+	color:black /*aliceblue*/;
 	text-align: center;
 }
 button{
@@ -41,6 +40,8 @@ button{
 	text-align: center;
 }
 #any{
-	width: 400px;
-	height: 250px;
+	width: 350px;
+	height: 200px;
+		color:black /*aliceblue*/;
+
 }

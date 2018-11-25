@@ -12,7 +12,7 @@ class App extends React.Component {
     }
   }
 add( name, title, text) {
-    if(userName && age && country ){
+    if(name && title && text ){
     $.ajax({
       type: 'POST',
       url: '/users',
@@ -36,6 +36,7 @@ add( name, title, text) {
         type:'GET',
         url: '/users',
         success:(data)=>{
+          console.log('eeeeeeeeeeeeee',data)
           this.setState({
             users:data
           })
@@ -49,7 +50,7 @@ add( name, title, text) {
   render () {
     return (
     <div>
-      <h1 id ='text'>  Survey</h1>      
+      <h1 id ='text'>  Write Your Survey</h1>      
       <UserList users={this.state.users}/>
       <AddUser  users={this.state.users} onAdd={this.add.bind(this)} onShow={this.showData.bind(this)}/>
 

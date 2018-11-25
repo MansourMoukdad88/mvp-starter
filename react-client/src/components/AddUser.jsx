@@ -9,14 +9,15 @@ class AddUsers extends React.Component{
 			text :''
 
 		}
+		// Bind all methods
 		this.addUserClick = this.addUserClick.bind(this)
 		this.onChangeName = this.onChangeName.bind(this)
 		this.onChangeTitle = this.onChangeTitle.bind(this)
 		this.onChangeText = this.onChangeText.bind(this)
 
-
 		this.btnShowData = this.btnShowData.bind(this)
 	}
+	// set all the methods with setState
 	onChangeName(x){
 		this.setState({
 			name: x.target.value
@@ -32,8 +33,6 @@ class AddUsers extends React.Component{
 			text: x.target.value
 		})
 	}
-
-
 	addUserClick(){
 		this.props.onAdd(this.state.name,this.state.title,this.state.text)
 	}
@@ -46,23 +45,21 @@ class AddUsers extends React.Component{
 		
 		return(
 			<div>
-				<div id='btn'><button onClick = {this.btnShowData}> Show Surveys</button></div>
-
-			<h2 id ='text'>Name : <input value = {this.state.name} onChange={this.onChangeName}/></h2>
-			<h2 id ='text'> Title: <input value = {this.state.title} onChange={this.onChangeTitle}/></h2>
+			<h2 id ='text'>Name : <input placeholder = "Your Name" value = {this.state.name} onChange={this.onChangeName}/></h2>
+			<h2 id ='text'> Title: <input placeholder = "The Title" value = {this.state.title} onChange={this.onChangeTitle}/></h2>
 			
-			<h2 id ='txt'>Text: <input id ="any" value = {this.state.text} onChange={this.onChangeText}/></h2>
+			<h2 id ='txt'>Text: <input placeholder = "Text" id ="any" value = {this.state.text} onChange={this.onChangeText}/></h2>
 			<div id='btn'><button onClick ={this.addUserClick} > Add </button></div>
+				<div id='btn'><button onClick = {this.btnShowData}> Show Surveys</button></div>
 
 
 
 			{this.props.users.map(function(user,i) {
    			return (
    						
-   				<h2  id ='user'  key={i}> 
-   					{user.name} THE TITLE : {user.title} THE TEXT : {user.text} 
-				</h2>
-   				
+   				<h3  id ='user'  key={i}> 
+   					The Name is  : {user.name},    The Title   : {user.title},   He Said   : {user.text} 
+				</h3>
    				)
   				 })}
 			</div>
