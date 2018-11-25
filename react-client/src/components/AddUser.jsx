@@ -17,19 +17,19 @@ class AddUsers extends React.Component{
 
 		this.btnShowData = this.btnShowData.bind(this)
 	}
-	onChangeName(e){
+	onChangeName(x){
 		this.setState({
-			name: e.target.value
+			name: x.target.value
 		})
 	}
-	onChangeTitle(e){
+	onChangeTitle(x){
 		this.setState({
-			title: e.target.value
+			title: x.target.value
 		})
 	}
-	onChangeText(e){
+	onChangeText(x){
 		this.setState({
-			text: e.target.value
+			text: x.target.value
 		})
 	}
 
@@ -47,10 +47,10 @@ class AddUsers extends React.Component{
 		
 		return(
 			<div>
-			<div id='btn'><button onClick = {this.btnShowData}> Show Surveys</button></div>
+				<div id='btn'><button onClick = {this.btnShowData}> Show Surveys</button></div>
 			<br/>
 			<h2 id ='text'>Name : <input value = {this.state.name} onChange={this.onChangeName}/></h2>
-			<h2 id ='text'> Tile: <input value = {this.state.title} onChange={this.onChangeTitle}/></h2>
+			<h2 id ='text'> Title: <input value = {this.state.title} onChange={this.onChangeTitle}/></h2>
 			
 			<h2 id ='txt'>Text: <input id ="any" value = {this.state.text} onChange={this.onChangeText}/></h2>
 			<div id='btn'><button onClick ={this.addUserClick} > Add </button></div>
