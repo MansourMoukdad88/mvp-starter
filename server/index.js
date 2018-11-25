@@ -24,6 +24,21 @@ app.get('/moments', function(req, res) {
 });
 */
 //=================================================================
+app.post('/users',function(req,res){
+
+
+  console.log('asdasdas',req.body)
+  users.save(req.body,function(err,data){
+    if(err){
+      
+      console.error(err)
+
+    }else{
+      console.log('my  Data' ,data)
+    res.send(data)
+  } 
+  })
+})
 app.get('/users', function (req, res) {
   users.User.find(function(err, data) {
     console.log(data)

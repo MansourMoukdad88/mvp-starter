@@ -34,7 +34,6 @@ class AddUsers extends React.Component{
 	}
 
 
-
 	addUserClick(){
 		this.props.onAdd(this.state.name,this.state.title,this.state.text)
 	}
@@ -48,13 +47,12 @@ class AddUsers extends React.Component{
 		return(
 			<div>
 				<div id='btn'><button onClick = {this.btnShowData}> Show Surveys</button></div>
-			<br/>
+
 			<h2 id ='text'>Name : <input value = {this.state.name} onChange={this.onChangeName}/></h2>
 			<h2 id ='text'> Title: <input value = {this.state.title} onChange={this.onChangeTitle}/></h2>
 			
 			<h2 id ='txt'>Text: <input id ="any" value = {this.state.text} onChange={this.onChangeText}/></h2>
 			<div id='btn'><button onClick ={this.addUserClick} > Add </button></div>
-			<br/>
 
 
 
