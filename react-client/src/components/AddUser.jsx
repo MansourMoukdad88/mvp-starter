@@ -49,10 +49,10 @@ class AddUsers extends React.Component{
 			<div>
 			<div id='btn'><button onClick = {this.btnShowData}> Show Surveys</button></div>
 			<br/>
-			<h2 id ='text'>Name : <input value = {this.state.name} onChange={this.onChangeName}/></h2>
-			<h2 id ='text'> Tile: <input value = {this.state.title} onChange={this.onChangeTitle}/></h2>
+			<h2 id ='text'>Name : <input type="text" value = {this.state.name} onChange={this.onChangeName}/></h2>
+			<h2 id ='text'> Tile: <input type="text"  value = {this.state.title} onChange={this.onChangeTitle}/></h2>
 			
-			<h2 id ='txt'>Text: <input id ="any" value = {this.state.text} onChange={this.onChangeText}/></h2>
+			<h2 id ='txt'>Text: <input id ="any" type="text" value = {this.state.text} onChange={this.onChangeText}/></h2>
 			<div id='btn'><button onClick ={this.AddUserClick} > Add </button></div>
 			<br/>
 
