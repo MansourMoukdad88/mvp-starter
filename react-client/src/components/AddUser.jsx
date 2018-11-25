@@ -9,7 +9,7 @@ class AddUsers extends React.Component{
 			text :''
 
 		}
-		this.AddUserClick = this.AddUserClick.bind(this)
+		this.addUserClick = this.addUserClick.bind(this)
 		this.onChangeName = this.onChangeName.bind(this)
 		this.onChangeTitle = this.onChangeTitle.bind(this)
 		this.onChangeText = this.onChangeText.bind(this)
@@ -24,18 +24,18 @@ class AddUsers extends React.Component{
 	}
 	onChangeTitle(e){
 		this.setState({
-			phone: e.target.value
+			title: e.target.value
 		})
 	}
 	onChangeText(e){
 		this.setState({
-			city: e.target.value
+			text: e.target.value
 		})
 	}
 
 
 
-	AddUserClick(){
+	addUserClick(){
 		this.props.onAdd(this.state.name,this.state.title,this.state.text)
 	}
 
@@ -49,11 +49,11 @@ class AddUsers extends React.Component{
 			<div>
 			<div id='btn'><button onClick = {this.btnShowData}> Show Surveys</button></div>
 			<br/>
-			<h2 id ='text'>Name : <input type="text" value = {this.state.name} onChange={this.onChangeName}/></h2>
-			<h2 id ='text'> Tile: <input type="text"  value = {this.state.title} onChange={this.onChangeTitle}/></h2>
+			<h2 id ='text'>Name : <input value = {this.state.name} onChange={this.onChangeName}/></h2>
+			<h2 id ='text'> Tile: <input value = {this.state.title} onChange={this.onChangeTitle}/></h2>
 			
-			<h2 id ='txt'>Text: <input id ="any" type="text" value = {this.state.text} onChange={this.onChangeText}/></h2>
-			<div id='btn'><button onClick ={this.AddUserClick} > Add </button></div>
+			<h2 id ='txt'>Text: <input id ="any" value = {this.state.text} onChange={this.onChangeText}/></h2>
+			<div id='btn'><button onClick ={this.addUserClick} > Add </button></div>
 			<br/>
 
 
