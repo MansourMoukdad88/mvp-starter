@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-//import List from './components/List.jsx';
-
 import UserList from './components/UserList.jsx';
 import AddUser from './components/AddUser.jsx';
 //=======================================

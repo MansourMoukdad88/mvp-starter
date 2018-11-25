@@ -2,12 +2,12 @@ var express = require('express');
 var bodyParser = require('body-parser');
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var items = require('../database-mysql');
- var items = require('../database-mongo');
+ var users = require('../database-mongo');
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}))
-/*app.use(bodyParser.json())
-*/
+app.use(bodyParser.json())
+
 // UNCOMMENT FOR REACT
  app.use(express.static(__dirname + '/../react-client/dist'));
 
@@ -27,7 +27,7 @@ app.get('/moments', function(req, res) {
 app.post('/users',function(req,res){
 
 
-  console.log('asdasdas',req.body)
+  console.log('reqest :::::',req.body)
   users.save(req.body,function(err,data){
     if(err){
       
@@ -45,6 +45,7 @@ app.get('/users', function (req, res) {
     if(err) {
       res.sendStatus(500);
     } else {
+  
       res.send(data);
     }
   });
